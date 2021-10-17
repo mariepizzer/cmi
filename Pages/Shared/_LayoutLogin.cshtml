@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<!--begin::Head-->
+	<head>
+        <base href="">
+        <title>@ViewData["Title"] - CMI</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="" />
+        <meta property="og:url" content="http://cmiconsulting.pe" />
+        <meta property="og:site_name" content="ANATranslate - CMI Consulting" />
+        <link rel="canonical" href="http://cmiconsulting.pe" />
+        <link rel="shortcut icon" href="~/Content/assets/media/logos/favicon.ico" />
+        <!--begin::Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+        <!--end::Fonts-->
+        <!--begin::Global Stylesheets Bundle(used by all pages)-->
+        <link href="~/Content/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <!--end::Global Stylesheets Bundle-->
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" class="">
+		<!--begin::Main-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Authentication-->
+			<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-size: 100% 50%; background-image: url(../Content/assets/media/illustrations/14.png)">
+				<!--begin::Content-->
+				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+					<!--begin::Logo-->
+					<a href="/" class="mb-12">
+						<img alt="Logo" src="~/Content/assets/media/logos/logo-2.png" class="h-45px" />
+					</a>
+					<!--end::Logo-->
+					<!--begin::Wrapper-->
+					<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+                         @RenderBody()
+					</div>
+					<!--end::Wrapper-->
+				</div>
+				<!--end::Content-->
+                <partial name="layout/_footer" />
+			</div>
+			<!--end::Authentication-->
+		</div>
+		<!--end::Main-->
+		<!--begin::Javascript-->
+        <!--begin::Global Javascript Bundle(used by all pages)-->
+        <script src="~/Content/assets/plugins/global/plugins.bundle.js"></script>
+        <script src="~/Content/assets/js/scripts.bundle.js"></script>
+        <!--end::Global Javascript Bundle-->
+        <!--begin::Page Custom Javascript(used by this page)-->
+        <script src="~/Content/assets/js/custom/intro.js"></script>
+        <!--end::Page Custom Javascript-->
+        <!--end::Javascript-->
+
+        @await RenderSectionAsync("Scripts", required: false)
+	</body>
+	<!--end::Body-->
+</html>
