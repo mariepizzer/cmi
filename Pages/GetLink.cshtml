@@ -1,9 +1,9 @@
-﻿@page
+@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Create Chatroom";
+    ViewData["Title"] = "Chatroom Link";
 }
-                                            <!--begin::Post-->
+                        <!--begin::Post-->
                         <div class="post d-flex flex-column-fluid" id="kt_post">
                             <!--begin::Container-->
                             <div id="kt_content_container" class="container">
@@ -16,7 +16,7 @@
                                             <!--begin::Wrapper-->
                                             <div class="d-flex flex-column align-items-start justift-content-center flex-equal me-5">
                                                 <!--begin::Title-->
-                                                <h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">Would you like to open a chatroom?</h1>
+                                                <h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">Copy and share this link!</h1>
                                                 <!--end::Title-->
                                                 <!--begin::Input group-->
                                                 <div class="position-relative w-100">
@@ -31,12 +31,12 @@
                                                         </svg>
                                                     </span>
                                                     <!--end::Svg Icon-->
-                                                    <input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="topic" value="" placeholder="What is it about?" />
+                                                    <input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="topic" value="" placeholder="http://localhost/Index/0P3656546asasd554fgf4gh" />
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Action-->
                                                 <div class="card-rounded d-flex flex-stack flex-wrap pt-5">
-                                                    <a asp-area="" asp-page="/GetLink" class="btn btn-primary fw-bolder fs-8 fs-lg-base">Get meeting link</a>
+                                                    <a asp-area="" asp-page="/GroupChat" class="btn btn-primary fw-bolder fs-8 fs-lg-base">Enter Chatroom</a>
                                                 </div>
                                                 <!--end::Action-->
 
