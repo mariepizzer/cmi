@@ -43,16 +43,27 @@
                             
                             <!--end::Input group-->
                             <div class="row fv-row mb-7">
+                                
                                 <!--begin::Col-->
-                                <div class="col-xl-6">
-                                    <label class="form-label fw-bolder text-dark fs-6">Country</label>
-                                    <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="country" autocomplete="off" />
+                                <div class="col-lg-6">
+                                    <label class="fs-6 fw-bold mb-2">Country</label>
+                                    <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="country">
+                                        <option value="1">Peru</option>
+                                        <option value="1">USA</option>
+                                        <option value="1">Spain</option>
+                                        <option value="1">Italy</option>
+                                    </select>
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
-                                <div class="col-xl-6">
-                                    <label class="form-label fw-bolder text-dark fs-6">Language</label>
-                                    <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="language" autocomplete="off" />
+                                <div class="col-lg-6">
+                                    <label class="fs-6 fw-bold mb-2">Language</label>
+                                    <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="language">
+                                        <option value="1">English</option>
+                                        <option value="1">Spanish</option>
+                                        <option value="1">Chinese</option>>
+                                        <option value="1">Russian</option>
+                                    </select>
                                 </div>
                                 <!--end::Col-->
                             </div>
@@ -106,11 +117,9 @@
                             <!--end::Input group-->
                             <!--begin::Actions-->
                             <div class="text-center">
-                                <button type="button" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
-                                    <span class="indicator-label">Submit</span>
-                                    <span class="indicator-progress">Please wait...
-                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                </button>
+                                <a asp-area="" asp-page="/Auth/Activate_User" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
+                                    Submit
+                                </a>
                             </div>
                             <!--end::Actions-->
                         </form>
