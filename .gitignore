@@ -1,6 +1,5 @@
 node_modules
 bin
-wwwroot
 Debug
 *.cache
 /obj

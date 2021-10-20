@@ -1,0 +1,64 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Create Chatroom";
+}
+                                            <!--begin::Post-->
+                        <div class="post d-flex flex-column-fluid" id="kt_post">
+                            <!--begin::Container-->
+                            <div id="kt_content_container" class="container">
+                                <!--begin::Hero card-->
+                                <div class="card mb-12">
+                                    <!--begin::Hero body-->
+                                    <div class="card-body flex-column p-5">
+                                        <!--begin::Hero content-->
+                                        <div class="d-flex align-items-center h-lg-300px p-5 p-lg-15">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex flex-column align-items-start justift-content-center flex-equal me-5">
+                                                <!--begin::Title-->
+                                                <h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">Would you like to open a chatroom?</h1>
+                                                <!--end::Title-->
+                                                <!--begin::Input group-->
+                                                <div class="position-relative w-100">
+                                                    <!--begin::Svg Icon | path: icons/duotone/General/Search.svg-->
+                                                    <span class="svg-icon svg-icon-2 svg-icon-primary position-absolute top-50 translate-middle ms-8">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24" height="24" />
+                                                                <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                                <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                    <input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="topic" value="" placeholder="What is it about?" />
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Action-->
+                                                <div class="card-rounded d-flex flex-stack flex-wrap pt-5">
+                                                    <a asp-area="" asp-page="/GetLink" class="btn btn-primary fw-bolder fs-8 fs-lg-base">Get meeting link</a>
+                                                </div>
+                                                <!--end::Action-->
+
+                                            </div>
+                                            <!--end::Wrapper-->
+                                            <!--begin::Wrapper-->
+                                            <div class="flex-equal d-flex justify-content-center align-items-end ms-5">
+                                                <!--begin::Illustration-->
+                                                <img src="~/Content/assets/media/illustrations/alert-2.png" alt="" class="mw-100 mh-125px mh-lg-275px mb-lg-n12" />
+                                                <!--end::Illustration-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                        </div>
+                                        <!--end::Hero content-->
+                                        <!--begin::Hero nav-->
+                                        
+                                        <!--end::Hero nav-->
+                                    </div>
+                                    <!--end::Hero body-->
+                                </div>
+                                <!--end::Hero card-->
+                            </div>
+                            <!--end::Container-->
+                        </div>
+                    <!--end::Post-->
