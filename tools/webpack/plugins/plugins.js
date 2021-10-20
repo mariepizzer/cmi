@@ -66,7 +66,7 @@ require('@/src/js/vendors/plugins/select2.init.js');
 window.autosize = require('autosize/dist/autosize.min.js');
 
 // Clipboard - Copy text to the clipboard shouldn't be hard. It shouldn't require dozens of steps to configure or hundreds of KBs to load: https://clipboardjs.com/
-// window.ClipboardJS = require('clipboard/dist/clipboard.min.js');
+window.ClipboardJS = require('clipboard/dist/clipboard.min.js');
 
 // DropzoneJS -  is an open source library that provides drag'n'drop file uploads with image previews: https://www.dropzonejs.com/
 // window.Dropzone = require('dropzone/dist/min/dropzone.min.js').default;
@@ -92,8 +92,8 @@ window.autosize = require('autosize/dist/autosize.min.js');
 // require('es6-promise-polyfill/promise.min.js');
 
 // Sweetalert2 - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes: https://sweetalert2.github.io/
-// window.Swal = window.swal = require('sweetalert2/dist/sweetalert2.min.js');
-// require('@/src/js/vendors/plugins/sweetalert2.init.js');
+window.Swal = window.swal = require('sweetalert2/dist/sweetalert2.min.js');
+require('@/src/js/vendors/plugins/sweetalert2.init.js');
 
 // CountUp.js - is a dependency-free, lightweight JavaScript class that can be used to quickly create animations that display numerical data in a more interesting way.
 // window.countUp = require('countup.js/dist/countUp.withPolyfill.min.js');
