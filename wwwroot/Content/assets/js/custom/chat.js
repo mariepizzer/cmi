@@ -28,6 +28,7 @@ var KTAppChat = function () {
 			handlerMessaging(messengerElement);
 		});
 	}
+	
 	var handlerMessaging = function (element) {
 		var messages = element.querySelector('[data-kt-element="messages"]');
 		var input = element.querySelector('[data-kt-element="input"]');
