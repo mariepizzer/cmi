@@ -24,23 +24,26 @@
 					<!--begin::Card body-->
 					<div class="card-body pt-5" id="kt_chat_contacts_body">
 						<!--begin::Users List-->
-						<div id="userList" data-kt-element="contacts" class="scroll-y me-n5 pe-5 h-200px h-lg-auto" data-kt-scroll="true"
-							data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+						<div id="userList" data-kt-element="contacts" class="scroll-y me-n5 pe-5 h-200px h-lg-auto"
+							data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+							data-kt-scroll-max-height="auto"
 							data-kt-scroll-dependencies="#kt_header, #kt_toolbar, #kt_footer, #kt_chat_contacts_header"
 							data-kt-scroll-wrappers="#kt_content, #kt_chat_contacts_body" data-kt-scroll-offset="0px">
-							
+
 							<!--begin::User(template)-->
 							<!--begin::Details-->
 							<div class="d-flex flex-stack py-4 d-none" data-kt-element="contact-template">
 								<div class="d-flex align-items-center">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-45px symbol-circle">
-										<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder" data-kt-element="contact-avatar"> </span>
+										<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+											data-kt-element="contact-avatar"> </span>
 									</div>
 									<!--end::Avatar-->
 									<!--begin::Details-->
 									<div class="ms-5">
-										<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2" data-kt-element="contact-name"> </a>
+										<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2"
+											data-kt-element="contact-name"> </a>
 										<div class="fw-bold text-muted" data-kt-element="contact-email"> </div>
 									</div>
 									<!--end::Details-->
@@ -49,7 +52,7 @@
 							<!--end::Details-->
 							<!--end::User(template)-->
 
-						<!--end::Users List-->
+							<!--end::Users List-->
 						</div>
 					</div>
 					<!--end::Card body-->
@@ -74,9 +77,11 @@
 						<!--begin::Title-->
 						<div class="card-title">
 							<!--begin::Users-->
-							<div class="symbol-group symbol-hover" id="usersAvatars"  data-kt-element="contact-avatars">
-								<div class="symbol symbol-35px symbol-circle d-none" data-kt-element="contact-avatar-template"> 
-									<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder" data-kt-element="contact-initial"></span> 
+							<div class="symbol-group symbol-hover" id="usersAvatars" data-kt-element="contact-avatars">
+								<div class="symbol symbol-35px symbol-circle d-none"
+									data-kt-element="contact-avatar-template">
+									<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+										data-kt-element="contact-initial"></span>
 								</div>
 							</div>
 							<!--end::Users-->
@@ -85,9 +90,13 @@
 					</div>
 					<!--end::Card header-->
 					<!--begin::Card body-->
-					<div class="card-body" id="kt_chat_messenger_body">
+					<div class="card-body" id="discussion"> <!--kt_chat_messenger_body-->
 						<!--begin::Messages-->
-						<div class="scroll-y me-n5 pe-5 h-300px h-lg-auto" data-kt-element="messages" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_header, #kt_toolbar, #kt_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer" data-kt-scroll-wrappers="#kt_content, #kt_chat_messenger_body" data-kt-scroll-offset="-2px">
+						<div class="scroll-y me-n5 pe-5 h-300px h-lg-auto" data-kt-element="messages"
+							data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+							data-kt-scroll-max-height="auto"
+							data-kt-scroll-dependencies="#kt_header, #kt_toolbar, #kt_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer"
+							data-kt-scroll-wrappers="#kt_content, #kt_chat_messenger_body" data-kt-scroll-offset="-2px">
 							<!--begin::Message(template for out)-->
 							<div class="d-flex justify-content-end mb-10 d-none" data-kt-element="template-out">
 								<!--begin::Wrapper-->
@@ -97,13 +106,14 @@
 										<!--begin::Details-->
 										<div class="me-3">
 											<span class="text-muted fs-7 mb-1" data-kt-element="out-time"></span>
-											<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary ms-1" data-kt-element="out-contact-name"></a>
+											<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary ms-1"
+												data-kt-element="out-contact-name"></a>
 										</div>
 										<!--end::Details-->
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<span
-												class="symbol-label bg-light-primary text-primary fs-6 fw-bolder" data-kt-element="out-contact-avatar">A</span>
+											<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+												data-kt-element="out-contact-avatar">A</span>
 										</div>
 										<!--end::Avatar-->
 									</div>
@@ -124,14 +134,14 @@
 									<div class="d-flex align-items-center mb-2">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<span
-												class="symbol-label bg-light-primary text-primary fs-6 fw-bolder" data-kt-element="in-contact-avatar"></span>
+											<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+												data-kt-element="in-contact-avatar"></span>
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-3">
-											<a href="#"
-												class="fs-5 fw-bolder text-gray-900 text-hover-primary me-1" data-kt-element="in-contact-name"></a>
+											<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary me-1"
+												data-kt-element="in-contact-name"></a>
 											<span class="text-muted fs-7 mb-1" data-kt-element="in-time"></span>
 										</div>
 										<!--end::Details-->
@@ -165,6 +175,15 @@
 							<!--begin::Send-->
 							<button class="btn btn-primary" type="button" data-kt-element="send">Send</button>
 							<!--end::Send-->
+						</div>
+						<div class="form-group">
+							<textarea name="preview" id="preview" class="form-control form-control-flush mb-3"
+                                      readonly
+                                      cols="80"
+                                      style="max-width: 100%;"
+                                      >
+							</textarea>
+
 						</div>
 						<!--end::Toolbar-->
 					</div>
