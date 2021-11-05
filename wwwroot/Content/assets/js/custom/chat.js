@@ -10,14 +10,25 @@ var __webpack_exports__ = {};
 var KTAppChat = function () {
 	// Private functions
 	var handlerSend = function (messengerElement) {
+		
 		if (!messengerElement) {
 			return;
+		}
+
+
+		var messages = messengerElement.querySelector('[data-kt-element="messages"]');
+		var input = messengerElement.querySelector('[data-kt-element="input"]');
+
+		let outgoingMessageObj = {
+			name: "Alex",
+			time: "Just now"
 		}
 
 		// Handle send
 		KTUtil.on(messengerElement, '[data-kt-element="input"]', 'keydown', function (e) {
 			if (e.keyCode == 13) {
-				handlerMessaging(messengerElement);
+				//handlerMessaging(messengerElement);
+				sendMessage(messages, input, outgoingMessageObj);
 				e.preventDefault();
 
 				return false;
@@ -25,18 +36,11 @@ var KTAppChat = function () {
 		});
 
 		KTUtil.on(messengerElement, '[data-kt-element="send"]', 'click', function (e) {
-			handlerMessaging(messengerElement);
+			//handlerMessaging(messengerElement);
+			sendMessage(messages, input, outgoingMessageObj);
 		});
 	}
-	
 	var handlerMessaging = function (element) {
-		var messages = element.querySelector('[data-kt-element="messages"]');
-		var input = element.querySelector('[data-kt-element="input"]');
-
-		let outgoingMessageObj = {
-			name: "Alex",
-			time: "Just now"
-		}
 		sendMessage(messages, input, outgoingMessageObj);
 
 		setTimeout(function () {
