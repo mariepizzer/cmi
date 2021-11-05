@@ -1,0 +1,67 @@
+@page
+@{
+	ViewData["Title"] = "Group Chat";
+	ViewData["ChatTopic"] = "Recovery of Datacenter";
+}
+<section class="container">
+        <div class="form-group" style="position: relative; float: left;  width:100%">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- COLUMNA IZQUIERDA -->
+
+                    <div id="box_left" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                        <div class="form-group">
+                            <label for="input_source">MESSAGE ver 1.1</label>
+                            <input type="text" class="form-control" name="message" id="message" placeholder="Message" style="max-width: 100%;" />
+
+                            <input id="idgrupo" name="idgrupo" type="hidden" value="idgrupo" />
+                            <input id="iduser" name="iduser" type="hidden" value="iduser" />
+                            <input id="nombre" name="nombre" type="hidden" value="nombre" />
+                            <input name="LanguageUser" id="LanguageUser" type="hidden" value="idlanguage" />
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="preview" id="preview"
+                                      readonly
+                                      cols="80"
+                                      style="max-width: 100%;
+                                      resize:none;
+                                      border:none;
+                                      color:gray; overflow:hidden;
+                                      background-color:white;">
+                            </textarea>
+
+                        </div>
+
+
+
+                        <label for="usuarios_conectados" id="onlineUsersCount">Users online: 0</label>
+
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-fixed-height">
+                                <ul id="userList">
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button id="btnSalir" name="btnSalir" class="btn btn-success">Exit Room</button>
+                        </div>
+
+                    </div>
+
+                    <!-- COLUMNA DERECHA -->
+                    <div id="box_right" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <label for="textarea_source">CHAT ROOM</label>
+                        <div id="chat" style="height:380px; width:450px;  overflow-y: auto;" class="panel panel-default" onmouseover="parar=1" onmouseout="parar=0">
+                            <ul id="discussion">
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
