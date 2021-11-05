@@ -88,11 +88,10 @@ var KTAppChat = function () {
 		contacts.appendChild(contact);
 		contacts.scrollTop = contacts.scrollHeight;
 	}
-	
+
 	var handleAvatar = function (avatarsElement, contactData) {
 		var avatars = avatarsElement.querySelector('[data-kt-element="contact-avatars"]');
 		var avatarsTemplate = avatars.querySelector('[data-kt-element="contact-avatar-template"]');
-		console.log(avatarsTemplate);
 		var avatar = avatarsTemplate.cloneNode(true);
 		avatar.classList.remove('d-none');
 		avatar.querySelector('[data-kt-element="contact-initial"]').innerText = contactData.name.charAt(0);
@@ -121,7 +120,6 @@ var KTAppChat = function () {
 // On document ready
 KTUtil.onDOMContentLoaded(function () {
 	// Init inline chat messenger
-	console.log("IN INIT");
 	KTAppChat.init(document.querySelector('#kt_chat_messenger'), document.querySelector("#kt_chat_contacts_body"), document.querySelector("#kt_chat_messenger_header") );
 });
 
