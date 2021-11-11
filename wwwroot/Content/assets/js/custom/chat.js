@@ -37,8 +37,8 @@ function receiveMessage (messages, messageObj) {
 	messages.scrollTop = messages.scrollHeight;
 }
 
-function setContact (element, contactData) {
-	var contacts = element.querySelector('[data-kt-element="contacts"]');
+function setContact ( contactData) {
+	var contacts = document.querySelector("#kt_chat_contacts_body").querySelector('#userList');
 	var contactsTemplate = contacts.querySelector('[data-kt-element="contact-template"]');
 	var contact = contactsTemplate.cloneNode(true);
 	contact.classList.remove('d-none');
@@ -49,8 +49,8 @@ function setContact (element, contactData) {
 	contacts.scrollTop = contacts.scrollHeight;
 }
 
-function setAvatar (avatarsElement, contactData) {
-	var avatars = avatarsElement.querySelector('[data-kt-element="contact-avatars"]');
+function setAvatar ( contactData) {
+	var avatars = document.querySelector("#kt_chat_messenger_header").querySelector('[data-kt-element="contact-avatars"]');
 	var avatarsTemplate = avatars.querySelector('[data-kt-element="contact-avatar-template"]');
 	var avatar = avatarsTemplate.cloneNode(true);
 	avatar.classList.remove('d-none');
@@ -58,7 +58,6 @@ function setAvatar (avatarsElement, contactData) {
 	avatars.appendChild(avatar);
 	avatars.scrollTop = avatars.scrollHeight;
 }
-
 
 var KTAppChat = function () {
 	// Private functions
@@ -96,7 +95,7 @@ var KTAppChat = function () {
 	
 	// Public methods
 	return {
-		init: function (messengerElement, contactsElement, avatarsElement) {
+		init: function (messengerElement,) {
 			var contactsData = [
 				{ id: 18, name: "Freddy", email: "freddy@cmiconsulting.pe" },
 				{ id: 28, name: "Alex", email: "Alex@cmiconsulting.pe" },
@@ -105,8 +104,8 @@ var KTAppChat = function () {
 			];
 			handlerSend(messengerElement);
 			contactsData.map(function (contactData) {
-				setContact(contactsElement, contactData);
-				setAvatar(avatarsElement, contactData);
+				setContact( contactData);
+				setAvatar( contactData);
 			})
 		}
 	};

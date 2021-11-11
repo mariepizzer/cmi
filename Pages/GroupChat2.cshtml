@@ -1,0 +1,321 @@
+@page
+@{
+	ViewBag.Title = "AulaVirtual";
+	ViewData["Title"] = "Group Chat";
+	ViewData["ChatTopic"] = "Recovery of Datacenter";
+	Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="post d-flex flex-column-fluid" id="kt_post">
+	<!--begin::Container-->
+	<div id="kt_content_container" class="container">
+		<!--begin::Layout-->
+		<div class="d-flex flex-column flex-lg-row">
+			<!--begin::Sidebar-->
+			<div class="flex-column flex-lg-row-auto w-100 w-lg-300px w-xl-400px mb-10 mb-lg-0">
+				<!--begin::Contacts-->
+				<div class="card card-flush">
+					<!--begin::Card header-->
+					<div class="card-header pt-7" id="kt_chat_contacts_header">
+						<span class="fw-bolder mb-2 text-dark">MESSAGE ver 1.1</span>
+						<span class="text-muted fw-bold fs-7" id="onlineUsersCount">Users Online: 2</span>
+					</div>
+					<!--end::Card header-->
+					<!--begin::Separator-->
+					<div class="separator separator-dashed"></div>
+					<!--end::Separator-->
+					<!--begin::Card body-->
+					<div class="card-body pt-5" id="kt_chat_contacts_body">
+						<!--begin::Users List-->
+						<div id="userList" data-kt-element="contacts" class="scroll-y me-n5 pe-5 h-200px h-lg-auto"
+							data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+							data-kt-scroll-max-height="auto"
+							data-kt-scroll-dependencies="#kt_header, #kt_toolbar, #kt_footer, #kt_chat_contacts_header"
+							data-kt-scroll-wrappers="#kt_content, #kt_chat_contacts_body" data-kt-scroll-offset="0px">
+
+
+						</div>
+						<!--begin::User(template)-->
+						<!--begin::Details-->
+						<div id="contact_template" class="d-flex flex-stack py-4 d-none"
+							data-kt-element="contact-template">
+							<div class="d-flex align-items-center">
+								<!--begin::Avatar-->
+								<div class="symbol symbol-45px symbol-circle">
+									<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+										data-kt-element="contact-avatar"> </span>
+								</div>
+								<!--end::Avatar-->
+								<!--begin::Details-->
+								<div class="ms-5">
+									<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2"
+										data-kt-element="contact-name"> </a>
+									<div class="fw-bold text-muted" data-kt-element="contact-email"> </div>
+								</div>
+								<!--end::Details-->
+							</div>
+						</div>
+						<!--end::Details-->
+						<!--end::User(template)-->
+						<!--end::Users List-->
+					</div>
+					<!--end::Card body-->
+				</div>
+				<!--end::Contacts-->
+				<!--begin::Exit-->
+				@*<div class="card-footer pt-4">
+					<div class="d-flex flex-stack">
+					<button id="btnSalir" name="btnSalir" class="btn btn-success">Exit Room</button>
+					</div>
+					</div>*@
+				<!--end::Exit-->
+
+			</div>
+			<!--end::Sidebar-->
+			<!--begin::Content-->
+			<div class="flex-lg-row-fluid ms-lg-7 ms-xl-10">
+				<!--begin::Messenger-->
+				<div class="card" id="kt_chat_messenger">
+					<!--begin::Card header-->
+					<div class="card-header" id="kt_chat_messenger_header">
+						<!--begin::Title-->
+						<div class="card-title">
+							<!--begin::Users-->
+							<div class="symbol-group symbol-hover" id="usersAvatars" data-kt-element="contact-avatars">
+								<div class="symbol symbol-35px symbol-circle d-none"
+									data-kt-element="contact-avatar-template">
+									<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+										data-kt-element="contact-initial"></span>
+								</div>
+							</div>
+							<!--end::Users-->
+						</div>
+						<!--end::Title-->
+					</div>
+					<!--end::Card header-->
+					<!--begin::Card body-->
+					<div class="card-body" id="discussion">
+						<!--kt_chat_messenger_body-->
+						<!--begin::Messages-->
+						<div class="scroll-y me-n5 pe-5 h-300px h-lg-auto" data-kt-element="messages"
+							data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+							data-kt-scroll-max-height="auto"
+							data-kt-scroll-dependencies="#kt_header, #kt_toolbar, #kt_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer"
+							data-kt-scroll-offset="-2px" data-kt-scroll-wrappers="#kt_content, #discussion">
+							<!--begin::Message(template for out)-->
+							<div class="d-flex justify-content-end mb-10 d-none" data-kt-element="template-out">
+								<!--begin::Wrapper-->
+								<div class="d-flex flex-column align-items-end">
+									<!--begin::User-->
+									<div class="d-flex align-items-center mb-2">
+										<!--begin::Details-->
+										<div class="me-3">
+											<span class="text-muted fs-7 mb-1" data-kt-element="out-time"></span>
+											<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary ms-1"
+												data-kt-element="out-contact-name"></a>
+										</div>
+										<!--end::Details-->
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+												data-kt-element="out-contact-avatar">A</span>
+										</div>
+										<!--end::Avatar-->
+									</div>
+									<!--end::User-->
+									<!--begin::Text-->
+									<div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end"
+										data-kt-element="message-text"></div>
+									<!--end::Text-->
+								</div>
+								<!--end::Wrapper-->
+							</div>
+							<!--end::Message(template for out)-->
+							<!--begin::Message(template for in)-->
+							<div class="d-flex justify-content-start mb-10 d-none" data-kt-element="template-in">
+								<!--begin::Wrapper-->
+								<div class="d-flex flex-column align-items-start">
+									<!--begin::User-->
+									<div class="d-flex align-items-center mb-2">
+										<!--begin::Avatar-->
+										<div class="symbol symbol-35px symbol-circle">
+											<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder"
+												data-kt-element="in-contact-avatar"></span>
+										</div>
+										<!--end::Avatar-->
+										<!--begin::Details-->
+										<div class="ms-3">
+											<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary me-1"
+												data-kt-element="in-contact-name"></a>
+											<span class="text-muted fs-7 mb-1" data-kt-element="in-time"></span>
+										</div>
+										<!--end::Details-->
+									</div>
+									<!--end::User-->
+									<!--begin::Text-->
+									<div class="p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start"
+										data-kt-element="message-text"></div>
+									<!--end::Text-->
+								</div>
+								<!--end::Wrapper-->
+							</div>
+							<!--end::Message(template for in)-->
+						</div>
+						<!--end::Messages-->
+					</div>
+					<!--end::Card body-->
+					<!--begin::Card footer-->
+					<div class="card-footer pt-4" id="kt_chat_messenger_footer">
+						<!--begin::Input-->
+						@*<textarea class="form-control form-control-flush mb-3" rows="1" data-kt-element="input"
+							placeholder="Type a message" name="message" id="message"></textarea>*@
+
+						<input type="text" class="form-control" name="message" id="message" placeholder="Message"
+							style="max-width: 100%;" data-kt-element="input" />
+
+
+						<input id="idgrupo" name="idgrupo" type="hidden" value="idgrupo" />
+						<input id="iduser" name="iduser" type="hidden" value="iduser" />
+						<input id="nombre" name="nombre" type="hidden" value="nombre" />
+						<input name="LanguageUser" id="LanguageUser" type="hidden" value="idlanguage" />
+
+						<!--end::Input-->
+						<!--begin:Toolbar-->
+						<br />
+						<div>
+							<!--begin::Send-->
+
+							<button class="btn btn-success" type="button" data-kt-element="send"
+								id="boton">Send</button>
+
+							<button id="btnSalir" name="btnSalir" class="btn btn-primary">Exit Room</button>
+						</div>
+
+
+
+
+						<div class="form-group">
+
+							<br />
+							<textarea name="preview" id="preview" readonly cols="80" style="max-width: 100%;
+                                      resize:none;
+                                      border:none;
+                                      color:gray; overflow:hidden;
+                                      background-color:white;">
+							</textarea>
+
+						</div>
+						<!--end::Toolbar-->
+					</div>
+					<!--end::Card footer-->
+				</div>
+				<!--end::Messenger-->
+			</div>
+			<!--end::Content-->
+		</div>
+		<!--end::Layout-->
+	</div>
+	<!--end::Container-->
+</div>
+
+
+
+@section scripts {
+
+
+<script type="text/javascript">
+
+
+	var messages = document.querySelector('#kt_chat_messenger').querySelector('[data-kt-element="messages"]');
+
+	//*************************************************
+
+	function sendMessage(messages, messageObj) {
+		var message = $("#message").val();
+		console.log("in sendmessage", message)
+
+		var messageOutTemplate = messages.querySelector('[data-kt-element="template-out"]');
+		var messageTemplate = messageOutTemplate.cloneNode(true);
+		messageTemplate.classList.remove('d-none');
+		messageTemplate.querySelector('[data-kt-element="message-text"]').innerText = messageObj.text;
+		messageTemplate.querySelector('[data-kt-element="out-contact-avatar"]').innerText = messageObj.name.charAt(0);
+		messageTemplate.querySelector('[data-kt-element="out-contact-name"]').innerText = messageObj.name;
+		messageTemplate.querySelector('[data-kt-element="out-time"]').innerText = messageObj.time;
+		//input.value = '';
+		messages.appendChild(messageTemplate);
+		messages.scrollTop = messages.scrollHeight;
+	}
+
+	function receiveMessage(messages, messageObj) {
+		var messageInTemplate = messages.querySelector('[data-kt-element="template-in"]');
+		var messageTemplate = messageInTemplate.cloneNode(true);
+		messageTemplate.classList.remove('d-none');
+		messageTemplate.querySelector('[data-kt-element="message-text"]').innerText = messageObj.text;
+		messageTemplate.querySelector('[data-kt-element="in-contact-avatar"]').innerText = messageObj.name.charAt(0);
+		messageTemplate.querySelector('[data-kt-element="in-contact-name"]').innerText = messageObj.name;
+		messageTemplate.querySelector('[data-kt-element="in-time"]').innerText = messageObj.time;
+		messages.appendChild(messageTemplate);
+		messages.scrollTop = messages.scrollHeight;
+	}
+
+	function setContact(contactData) {
+		var contacts = document.querySelector('#userList');
+		var contactsTemplate = document.querySelector('#contact_template');
+		var contact = contactsTemplate.cloneNode(true);
+		contact.classList.remove('d-none');
+		contact.querySelector('[data-kt-element="contact-avatar"]').innerText = contactData?.name.charAt(0);
+		contact.querySelector('[data-kt-element="contact-email"]').innerText = contactData?.email;
+		contact.querySelector('[data-kt-element="contact-name"]').innerText = contactData?.name;
+		contacts.appendChild(contact);
+		contacts.scrollTop = contacts.scrollHeight;
+	}
+
+	function setAvatar(contactData) {
+		var avatars = document.querySelector('[data-kt-element="contact-avatars"]');
+		var avatarsTemplate = avatars.querySelector('[data-kt-element="contact-avatar-template"]');
+		var avatar = avatarsTemplate.cloneNode(true);
+		avatar.classList.remove('d-none');
+		avatar.querySelector('[data-kt-element="contact-initial"]').innerText = contactData.name.charAt(0);
+		avatars.appendChild(avatar);
+		avatars.scrollTop = avatars.scrollHeight;
+	}
+
+	let varColorConnect = 'cornflowerblue';
+	let varColorMessage = '#BDBDBD';
+	let grupo = $("#idgrupo").val();
+	let iduser = $("#iduser").val();
+	let username = $("#nombre").val();
+	let language = $("#LanguageUser").val();
+
+	$(function () {
+		$("#discussion").append("<br />");
+
+		$("#message").on("change", function () {
+			console.log('Se disparó el Evento: CHANGE');
+			var name = $("#nombre").val();
+			var message = $("#message").val();
+			let outgoingMessageObj = {
+				text: message,
+				name: username,
+				time: Date.now()
+			}
+			console.log("sendMessage------------------");
+			sendMessage(messages, outgoingMessageObj);
+
+
+			$("#message").val("").focus();
+		})
+		
+		onload = function () {
+			setInterval(function () {
+				if (window.parar) return;
+				document.getElementById('kt_chat_messenger').scrollTop = document.getElementById('kt_chat_messenger').scrollHeight
+			}, 30);
+		};
+	});
+
+</script>
+
+}
